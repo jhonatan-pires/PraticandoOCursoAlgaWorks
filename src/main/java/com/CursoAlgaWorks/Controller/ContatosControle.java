@@ -1,6 +1,8 @@
-package com.CursoAlgaWorks;
+package com.CursoAlgaWorks.Controller;
 
 import java.util.ArrayList;
+
+import com.CursoAlgaWorks.Factory.Contato;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,6 +26,13 @@ public class ContatosControle {
     public ModelAndView listar() {
         ModelAndView modelAndView = new ModelAndView("listar");
         modelAndView.addObject("contatos", LISTA_CONTATOS);
+        return modelAndView;
+    }
+
+    @GetMapping("/contatos/novo")
+    public ModelAndView novo(){
+        ModelAndView modelAndView = new ModelAndView("formulario");
+        modelAndView.addObject("contato", new Contato());
         return modelAndView;
     }
 }

@@ -1,5 +1,4 @@
-package com.CursoAlgaWorks;
-
+package com.CursoAlgaWorks.Factory;
 
 public class Contato {
     private String id;
@@ -12,6 +11,11 @@ public class Contato {
         this.nome = nome;
         this.telefone = telefone;
     }
+
+    public boolean isNovo(){
+        return id == null;
+    }
+
     public String getNome() {
         return nome;
     }
