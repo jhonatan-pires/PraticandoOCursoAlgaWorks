@@ -30,7 +30,6 @@ public class ContatosControle {
         modelAndView.addObject("contatos", LISTA_CONTATOS);
         return modelAndView;
     }
-
     @GetMapping("/contatos/novo")
     public ModelAndView novo(){
         ModelAndView modelAndView = new ModelAndView("formulario");
