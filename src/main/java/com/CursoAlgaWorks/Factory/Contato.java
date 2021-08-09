@@ -1,5 +1,9 @@
 package com.CursoAlgaWorks.Factory;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public class Contato {
     private String id;
     private String nome;
@@ -11,7 +15,11 @@ public class Contato {
         this.nome = nome;
         this.telefone = telefone;
     }
-    public String getNome() {
+
+    public boolean isNovo(){
+        return id == null;
+    }
+   /* public String getNome() {
         return nome;
     }
     public void setNome(String nome) {
@@ -28,5 +36,5 @@ public class Contato {
     }
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
+    }*/
 }
