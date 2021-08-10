@@ -2,14 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width"/>
-
     <title>Jp</title>
-
     <link rel="stylesheet" th:href="@{/css/estilo.css}" />
-
 </head>
 
 <body>
@@ -21,7 +17,6 @@
             <li><a th:href="@{/contatos/novo}"> Novo </a></li>
         </ul>
     </nav>
-
 </header>
 
 <main>
@@ -35,17 +30,15 @@
             <tr>
                 <th>Nome</th>
                 <th>Telefone</th>
-                <th>#</th>
-                <th>#</th>
+                <th>Editar telefone</th>
+                <th>Remover Contato</th>
             </tr>
             </thead>
 
             <tbody>
             <tr th:each="contato: ${contatos}">
                 <td th:text="${contato.nome}"></td>
-
                 <td th:text="${contato.telefone}"></td>
-
                 <td>
                     <a th:href="@{/contatos/{contato}/editar(contato=${contato.id})}">Editar</a>
                 </td>
@@ -62,5 +55,4 @@
     </section>
 </main>
 </body>
-
 </html>

@@ -17,13 +17,10 @@
   <nav>
     <ul>
       <li><a th:href="@{/}"> AlgaWorks Contatos </a></li>
-
       <li><a th:href="@{/contatos}"> Listar </a></li>
-
       <li><a th:href="@{/contatos/novo}"> Novo </a></li>
     </ul>
   </nav>
-
 </header>
 
 <main>
@@ -37,20 +34,16 @@
 
       <div th:if="${!contato.novo}">
         <label>Código: </label>
-
-
         <input th:field="*{id}" readonly="readonly" />
       </div>
 
       <div>
         <label>Nome: </label>
-
         <input th:field="*{nome}" />
       </div>
 
       <div>
         <label>Telefone: </label>
-
         <input th:field="*{telefone}"/>
       </div>
 
