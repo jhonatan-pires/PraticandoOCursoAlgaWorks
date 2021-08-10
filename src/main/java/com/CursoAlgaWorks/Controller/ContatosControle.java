@@ -3,6 +3,7 @@ package com.CursoAlgaWorks.Controller;
 import com.CursoAlgaWorks.Factory.Contato;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -48,4 +49,27 @@ public class ContatosControle {
 
         return "redirect:/contatos";
     }
+
+    @GetMapping("/contatos/{id}/editar")
+    public ModelAndView editar(@PathVariable String id){
+        ModelAndView modelAndView = new ModelAndView("formulario");
+
+        Contato contato = procurarContato(id);
+
+        modelAndView.addObject("contato", contato);
+        return modelAndView;
+    }
+
+    public Contato procurarContato(String id){
+        for(int i = 0; i < LISTA_CONTATOS.size(); i++){
+            Contato contato = LISTA_CONTATOS.get(i);
+
+            if(contato.getId().equals(id)){
+                return contato;
+            }
+        }
+        return null;
+    }
+
+
 }
