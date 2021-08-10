@@ -1,20 +1,16 @@
 package com.CursoAlgaWorks.Factory;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter @Setter @AllArgsConstructor()
 public class Contato {
     private String id;
     private String nome;
     private String telefone;
-    public Contato() {}
 
-    public Contato(String id, String nome, String telefone) {
-        this.id = id;
-        this.nome = nome;
-        this.telefone = telefone;
-    }
+    public Contato() {}
 
     public boolean isNovo(){
         return id == null;

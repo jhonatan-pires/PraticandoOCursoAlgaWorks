@@ -20,16 +20,19 @@ public class ContatosControle {
         LISTA_CONTATOS.add(new Contato("4", "Thiago", "+55 34 00000 0000"));
         LISTA_CONTATOS.add(new Contato("5", "Alexandre", "+55 34 00000 0000"));
     }
+
     @GetMapping("/")
     public String index() {
         return "index";
     }
+
     @GetMapping("/contatos")
     public ModelAndView listar() {
         ModelAndView modelAndView = new ModelAndView("listar");
         modelAndView.addObject("contatos", LISTA_CONTATOS);
         return modelAndView;
     }
+
     @GetMapping("/contatos/novo")
     public ModelAndView novo(){
         ModelAndView modelAndView = new ModelAndView("formulario");
